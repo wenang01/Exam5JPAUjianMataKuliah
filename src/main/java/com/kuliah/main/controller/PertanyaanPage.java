@@ -20,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.kuliah.main.entity.MataKuliah;
 import com.kuliah.main.entity.Pertanyaan;
 import com.kuliah.main.services.ModelPertanyaan;
+import com.kuliah.main.services.ModelSoal;
 import com.kuliah.main.utility.FileUtility;
 
 @Controller
@@ -27,6 +28,9 @@ public class PertanyaanPage {
 
 	@Autowired
 	ModelPertanyaan modelPertanyaan;
+	
+	@Autowired
+	ModelSoal modelSoal;
 
     private final String UPLOAD_DIR = "./src/main/resources/static/uploads/";
 
@@ -40,6 +44,7 @@ public class PertanyaanPage {
 	@GetMapping("/pertanyaan/add")
 	public String viewAddPertanyaan(Model model) {
 		model.addAttribute("pertanyaan",new Pertanyaan());
+		model.addAttribute("lstSoal",modelSoal.getAllSoal());
 		return "add_pertanyaan";
 	}
 	
@@ -58,7 +63,7 @@ public class PertanyaanPage {
            this.modelPertanyaan.addPertanyaan(pertanyaan);
 
 		model.addAttribute("listpertanyaan",modelPertanyaan.getAllPertanyaan());
-		
+		model.addAttribute("lstSoal",modelSoal.getAllSoal());
 		return "redirect:/pertanyaan/view";
 	  }
 	}
@@ -78,7 +83,7 @@ public class PertanyaanPage {
 		Pertanyaan pertanyaan = modelPertanyaan.cariPertanyaan(id);
 		// buat penampung data MataKuliah di halaman htmlnya
 		model.addAttribute("pertanyaan",pertanyaan);
-		
+		model.addAttribute("lstSoal",modelSoal.getAllSoal());
 		return "add_pertanyaan";
 	}
 }

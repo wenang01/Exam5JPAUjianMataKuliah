@@ -31,10 +31,10 @@
             name="multiSelectElementsSelected"
             multiple="multiple"
             th:field="*{lstPertanyaan}">
-
-        <option th:each="pertanyaan,row : ${listPertanyaan}"
+        <option th:each="pertanyaan, row : ${lstPertanyaan}"
                 th:value="${pertanyaan.id}"
-                th:text="${pertanyaan.pertanyaan1}"></option>
+                th:text="${pertanyaan.pertanyaan1}">
+        </option>
 </select>
 <div class="mb-3">
 <input type="hidden" th:field="*{id}">

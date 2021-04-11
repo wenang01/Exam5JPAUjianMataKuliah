@@ -39,9 +39,9 @@
       <td th:text="${plot_mata_kuliah.matakuliah.namaMataKuliah}"></td>
      
       <td>
-         <a th:href="@{/plotmatkul/update/{id}(id=${plot_mata_kuliah.idPlotMataKuliah})}" class="btn btn-primary btn-sm" tabindex="-1" role="button" ><i class="fa fa-folder" ></i> Update </a>
-         <a th:href="@{/plotmatkul/delete/{id}(id=${plot_mata_kuliah.idPlotMataKuliah})}" class="btn btn-danger btn-sm" tabindex="-1" role="button" ><i class="fa fa-close"></i> Delete </a>
-
+        <a th:href="@{/plotmatkul/update/{id}(id=${plot_mata_kuliah.idPlotMataKuliah})}" class="btn btn-primary btn-sm" tabindex="-1" role="button" ><i class="fa fa-folder" ></i> Update </a>
+        <a th:href="@{/plotmatkul/delete/{id}(id=${plot_mata_kuliah.idPlotMataKuliah})}" class="btn btn-danger btn-sm" tabindex="-1" role="button" ><i class="fa fa-close"></i> Delete </a>
+		<a th:href="@{/ujian/{id}(id=${plot_mata_kuliah.idPlotMataKuliah})}" class="btn btn-warning btn-sm" tabindex="-1" role="button" ><i class="fa fa-pencil-square-o"></i> Ujian </a>
       </td>
     </tr>
     

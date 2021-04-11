@@ -39,7 +39,7 @@ public class PagePlotMatkul {
 	public String viewIndexSoal(Model model) {
 		
 		model.addAttribute("listPlotMatkul",modelPlotMatkul.getAllPlotMatkul());
-		model.addAttribute("active",5);
+		model.addAttribute("active",7);
 		return "view_plot_matkul";
 	}
 	
@@ -48,7 +48,7 @@ public class PagePlotMatkul {
 	public String viewAddPlotMatkul(Model model) {
 		// buat penampung data Soal di halaman htmlnya
 		model.addAttribute("plot_mata_kuliah",new PlotMataKuliah());
-		model.addAttribute("listSoal",modelSoal.getAllSoal());
+		model.addAttribute("lstSoal",modelSoal.getAllSoal());
 		model.addAttribute("listDosen",modelDosen.getAllDosen());
 		model.addAttribute("listMataKuliah",modelMataKuliah.getAllMataKuliah());
 		model.addAttribute("listMahasiswa",modelMahasiswa.getAllMahasiswa());
@@ -73,7 +73,7 @@ public class PagePlotMatkul {
 	public String viewUpdatePlotMatkul(@PathVariable String id, Model model) {
 		
 		PlotMataKuliah plotMatkul = modelPlotMatkul.getPlotMatkulById(id);
-		model.addAttribute("listSoal",modelSoal.getAllSoal());
+		model.addAttribute("lstSoal",modelSoal.getAllSoal());
 		model.addAttribute("listDosen",modelDosen.getAllDosen());
 		model.addAttribute("listMataKuliah",modelMataKuliah.getAllMataKuliah());
 		model.addAttribute("listMahasiswa",modelMahasiswa.getAllMahasiswa());
